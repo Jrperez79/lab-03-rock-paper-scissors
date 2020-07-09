@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
-    <title>Document</title>
+    <title>Rock Paper Scissors App</title>
 </head>
 
 <body>
@@ -18,29 +18,34 @@
     </header>
     <main>
         <section>
+            <h3>Let's Play Rock, Paper, Scissors!</h3>
+            <!--Items to pick from: Rock Paper Scissors-->
             <label>
                 Rock
-                <input type="radio" name="coin" value="heads" checked/>
-                <img width="100" height="100" src=""/>
-
+                <input type="radio" name="guess-option" id="play-on-rock" value="Rock" checked/>
+                <img width="100" height="100" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.s48e3Nv8BRhI1X2ffpMdbgHaEQ%26pid%3DApi&f=1"/>
+ 
             </label>
             <label>
                 Paper
-                <input type="radio" name="coin" value="tails" />
-                <img width="100" height="100" src=""/>
+                <input type="radio" name="guess-option" id="play-on-paper" value="Paper" />
+                <img width="100" height="100" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.HI_OyftMOv2dfaI7jQNnhQHaGz%26pid%3DApi&f=1"/>
             </label>
             <label>
                 Scissors
-                <input type="radio" name="coin" value="tails" />
-                <img width="100" height="100" src=""/>
+                <input type="radio" name="guess-option" id="play-on-scissors" value="Scissors" />
+                <img width="100" height="100" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Q0oy2rtm5ciE4XNsFDqzdQHaHa%26pid%3DApi&f=1"/>
             </label>
-            <button id="guess-button">Guess</button>
+            <!--Button to Trigger Game-->
+            <button id="guess-button">Let's Do This!</button>
         </section>
         <section>
-            <div id="current"></div>
-            <div id="wins"></div>
-            <div id="losses"></div>
-            <div id="total"></div>
+            <!--Results-->
+            <div id="current">Current Game Result:</div>
+            <div id="wins">Games Won:</div>
+            <div id="losses">Games Lost:</div>
+            <div id="draws">Games Drawn:</div>
+            <div id="total">Total Games Played:</div>
         </section>
     </main>
     <footer>
