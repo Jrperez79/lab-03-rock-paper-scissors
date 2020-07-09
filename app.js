@@ -3,12 +3,13 @@ import { getRandomThrow, checkResults } from './random-throw.js';
 
 //DOM elements
 const myButton = document.getElementById('guess-button');
-const cpuPick = document.getElementById('cpu-pick');
-const current = document.getElementById('current');
+const computerSelection = document.getElementById('cpu-pick');
+const resetButton = document.getElementById('reset-button');
 const winCount = document.getElementById('wins');
-const losscount = document.getElementById('losses');
+const lossCount = document.getElementById('losses');
 const drawCount = document.getElementById('draws');
 const totalCount = document.getElementById('total');
+
 
 // initialize state
 // Total Wins Losses Draws
@@ -18,4 +19,50 @@ let userDraws = 0;
 let totalGames = 0;
 
 // set event listeners to update state and DOM
+const resetGame = () => {
+    userWins = 0;
+    userLoss = 0;
+    userDraws = 0;
+    totalGames = 0;
+    computerSelection.textContent = '';
+    updateSpans();
+};
+
+//Updates Results Section
+const updateSpans = () => {
+    winCount.textContent = userWins;
+    lossCount.textContent = userLoss;
+    drawCount.textContent = userDraws;
+    totalCount.textContent = totalGames;
+};
+
+//EventListener on the "Let's Play Button"
+myButton.addEventListener('click', () => {
+
+    const userButton = document.querySelector('input:checked');
+    const userSelection = userButton.value;
+
+    const computerSelection = getRandomThrow();
+    const getResult = checkResults(userSelection, computerSelection);
+
+    if (getResult === 'You won!') {
+        userWins++;
+    } 
+    
+    if (getResult === 'You Lose!') {
+        userLoss++;
+    } 
+    if (getResult === 'It is a draw!') {
+        userDraws++;
+    }
+    totalGames++;
+    
+    computerSelection.textContent = 'The Computer has ' + computerSelection + '. ' + getResult;
+
+    updateSpans();
+    console.log(myButton);
+});
+
+//Button to Reset game
+resetButton.addEventListener('click', resetGame);
 
