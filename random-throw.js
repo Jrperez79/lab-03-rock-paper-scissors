@@ -9,9 +9,9 @@ export function getRandomThrow() {
     }
 }
 
-export function checkResults(cpuThrow, playerThrow) {
+export function checkResults(playerThrow, cpuThrow) {
     if (cpuThrow === 'Rock' && playerThrow === 'Scissors') {
-        return 'You Won!';
+        return 'You Lose!';
     } else if (cpuThrow === 'Rock' && playerThrow === 'Paper') {
         return 'You Won!';
     } else if (cpuThrow === 'Paper' && playerThrow === 'Rock') {
