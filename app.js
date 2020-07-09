@@ -4,11 +4,11 @@ import { getRandomThrow, checkResults } from './random-throw.js';
 //DOM elements
 const myButton = document.getElementById('guess-button');
 const computerSelection = document.getElementById('cpu-pick');
-const resetButton = document.getElementById('reset-button');
 const winCount = document.getElementById('wins');
 const lossCount = document.getElementById('losses');
 const drawCount = document.getElementById('draws');
 const totalCount = document.getElementById('total');
+const resetButton = document.getElementById('reset-button');
 
 
 // initialize state
@@ -19,14 +19,6 @@ let userDraws = 0;
 let totalGames = 0;
 
 // set event listeners to update state and DOM
-const resetGame = () => {
-    userWins = 0;
-    userLoss = 0;
-    userDraws = 0;
-    totalGames = 0;
-    computerSelection.textContent = '';
-    updateSpans();
-};
 
 //Updates Results Section
 const updateSpans = () => {
@@ -60,9 +52,18 @@ myButton.addEventListener('click', () => {
     computerSelection.textContent = 'The Computer has ' + computerSelection + '. ' + getResult;
 
     updateSpans();
-    console.log(myButton);
+
 });
 
 //Button to Reset game
+const resetGame = () => {
+    userWins = 0;
+    userLoss = 0;
+    userDraws = 0;
+    totalGames = 0;
+    computerSelection.textContent = '';
+    updateSpans();
+};
+
 resetButton.addEventListener('click', resetGame);
 
