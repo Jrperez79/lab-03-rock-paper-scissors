@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <title>Rock Paper Scissors App</title>
+</head>
+
+<body>
+    <header>
+        <div></div>
+    </header>
+    <main>
+        <section>
+            <h1>Let's Play Rock, Paper, Scissors!</h1>
+            <!--Items to pick from: Rock Paper Scissors-->
+            <h3>Click One Of The Images Below to Play</h3>
+            <label id='select-rock'>
+                Rock
+                <input type="radio" name="guess-option" value="Rock" checked/>
+                <img width="100" height="100" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.s48e3Nv8BRhI1X2ffpMdbgHaEQ%26pid%3DApi&f=1"/>
+ 
+            </label>
+            <label id="select-paper">
+                Paper
+                <input type="radio" name="guess-option" value="Paper" />
+                <img width="100" height="100" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.HI_OyftMOv2dfaI7jQNnhQHaGz%26pid%3DApi&f=1"/>
+            </label>
+            <label id="select-scissors">
+                Scissors
+                <input type="radio" name="guess-option" value="Scissors" />
+                <img width="100" height="100" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Q0oy2rtm5ciE4XNsFDqzdQHaHa%26pid%3DApi&f=1"/>
+            </label>
+            <!--Button to Trigger Game-->
+            <button id="guess-button">Let's Play!</button>
+        </section>
+        <section id="results-section">
+            <!--Results-->
+            <div>Computers Pick: <span id="cpu-pick"></span></div>
+            <div>Games Won: <span id="wins"></span></div>
+            <div>Games Lost: <span id="losses"></span></div>
+            <div>Games Drawn: <span id="draws"></span></div>
+            <div>Total Games Played: <span id="total"></span></div>
+        </section>
+        <!--Reset Button Section-->
+        <button id="reset-button">Play Again!</button>
+    </main>
+    <footer>
+        <div></div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
